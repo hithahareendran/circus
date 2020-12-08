@@ -8,6 +8,9 @@ body{
     font-family: Muli;
     font-size: 16px;
     background-image: url("../images/background.png");
+    max-width: 900px;
+    margin: 10px auto;
+    padding: 10px;
 }
 
 main{
@@ -25,9 +28,10 @@ h1{
     text-align: center;
     color: #0C3653;
 }
-h2{
+h3{
     font-family: Muli,Light;
     color: #255A7E;
+    padding: 10px
 }
 p{
     color: #0C3653;

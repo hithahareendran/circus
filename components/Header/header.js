@@ -40,12 +40,12 @@ nav> ul > li{
       <div class="logo"><img src="images/logo.jpeg" alt="The Famous Circus Restaurant" width="30px" height="30px"></div>
       <div>
           <nav>
-              <ul>
-                  <li><a href="home.html">Home</a></li>
-                  <li><a href="shows.html">Shows</a></li>
-                  <li><a href="menu.html">Menu</a></li>
-                  <li><a href="gallery.html">Gallery</a></li>
-                  <li><a href="contact.html">Contact us</a></li>
+              <ul class="navLinks">
+                  <li id="Home"><a href="home.html">Home</a></li>
+                  <li id="Shows"><a href="shows.html">Shows</a></li>
+                  <li id="Menu"><a href="menu.html">Menu</a></li>
+                  <li id="Gallery"><a href="gallery.html">Gallery</a></li>
+                  <li id="Contact"><a href="contact.html">Contact us</a></li>
               </ul>
           </nav>
       </div>
@@ -54,13 +54,25 @@ nav> ul > li{
 `;
 
 class Header extends HTMLElement {
+    static get observedAttributes() {
+        return ['selected'];
+    }
+
     constructor() {
         super();
-    }
-    connectedCallback() {
-        const shadowRoot = this.attachShadow({ mode: 'closed' });
+        const shadowRoot = this.attachShadow({ mode: 'open' });
         shadowRoot.appendChild(headerTemplate.content);
     }
+
+    attributeChangedCallback(name, oldVal, newVal) {
+        if (oldVal !== newVal) {
+            this.setAttribute(name, newVal);
+            var style = document.createElement( 'style' )
+            style.innerHTML = ".navLinks #"+newVal+"{ pointer-events: none; cursor: default; font-weight: bold;}";
+            this.shadowRoot.appendChild( style );
+        }
+    }
+
 }
 
 customElements.define('header-component', Header);
