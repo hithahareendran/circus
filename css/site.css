@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+}
+html,body{
+    height:100%;
+}
+body{
+    font-family: Muli;
+    font-size: 16px;
+    background-image: url("../images/background.png");
+}
+
+main{
+    display: block;
+    
+    padding-top: 3em;
+
+}
+
+article{
+    padding: 2em;
+}
+h1{
+    font-family: Georgia,bold;
+    text-align: center;
+    color: #0C3653;
+}
+h2{
+    font-family: Muli,Light;
+    color: #255A7E;
+}
+p{
+    color: #0C3653;
+    padding: 10px;
+}
