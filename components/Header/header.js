@@ -17,18 +17,21 @@ header{
     background-color: #a493c0;
     padding: 10px;
 }
-
 nav a:visited,
 nav a:link{
     color: #fff;
     text-decoration: none;
 }
-
+nav a:hover{
+    color: #0C3653;
+}
+nav a:active{
+    color: #255A7E;
+}
 nav > ul {
 display: inline;
 padding: 0;
 }
-
 nav> ul > li{
     display: inline-block;
     list-style: none;
@@ -66,10 +69,10 @@ class Header extends HTMLElement {
 
     attributeChangedCallback(name, oldVal, newVal) {
         if (oldVal !== newVal) {
-            this.setAttribute(name, newVal);
-            var style = document.createElement( 'style' )
-            style.innerHTML = ".navLinks #"+newVal+"{ pointer-events: none; cursor: default; font-weight: bold;}";
-            this.shadowRoot.appendChild( style );
+            console.log(document.getElementById("Menu"));
+            // var style = document.createElement( 'style' )
+            // style.innerHTML = ".navLinks #"+newVal+"{ pointer-events: none; cursor: default; font-weight: bold;}";
+            // this.shadowRoot.appendChild( style );
         }
     }
 

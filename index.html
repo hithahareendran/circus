@@ -2,12 +2,20 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/site.css" type="text/css">
-    <script src="./components/Header/header.js" type="text/javascript" defer></script>
-    <script src="./components/Cards/cards.js" type="text/javascript" defer></script>
+    <!-- <script src="./components/Header/header.js" type="text/javascript" defer></script> -->
+    <!-- <script src="./components/Cards/cards.js" type="text/javascript" defer></script> -->
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script>
+            $(function(){
+                
+                 $('#headersection').load('components/Header/header.html');
+            });
+       </script>
 </head>
 
 <body>
-    <header-component selected="Menu"></header-component>
+    <div id="headersection"></div>
+    <!-- <header-component selected="Menu"></header-component> -->
     <main>
         <article>
             <h1>Explore Our Foods</h1>
@@ -15,7 +23,7 @@
             <p>There is a powerful need for symbolism,
                 and that means the architecture must have something that appeals
                 to the human heart.</p>
-                <card-component></card-component>
+                <!-- <card-component></card-component> -->
         </article>
     </main>
 </body>
