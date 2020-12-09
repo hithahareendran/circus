@@ -12,14 +12,10 @@ body{
     margin: 10px auto;
     padding: 10px;
 }
-
 main{
     display: block;
-    
     padding-top: 3em;
-
 }
-
 article{
     padding: 2em;
 }
